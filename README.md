@@ -52,7 +52,3 @@ Produces two files in the working directory:
 
 - Top users in London tend to have a diverse language mix across their repos rather than specializing in one stack.
 - Active, well-documented profiles correlate with higher follower counts.
-
-## License
-
-No license file included — add one if you plan to make this reusable by others.
