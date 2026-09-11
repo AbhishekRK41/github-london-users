@@ -1,11 +1,5 @@
-response = requests.get("https://api.github.com/rate_limit", headers=headers)
-
-if response.status_code == 200:
-    print("Token is working. Rate limit info:", response.json())
-else:
-    print("Token not working. Status code:", response.status_code, response.json())
-import requests
 import os
+import requests
 import csv
 import time
 from collections import defaultdict
@@ -14,6 +8,13 @@ headers = {
     "Authorization": f"Bearer {os.getenv('GITHUB_TOKEN')}",
     "Accept": "application/vnd.github+json"
 }
+
+# Verify the token works before the full run
+response = requests.get("https://api.github.com/rate_limit", headers=headers)
+if response.status_code == 200:
+    print("Token is working. Rate limit info:", response.json())
+else:
+    print("Token not working. Status code:", response.status_code, response.json())
 
 # Function to get users in London with over 500 followers
 def get_users(location="London", min_followers=500):
