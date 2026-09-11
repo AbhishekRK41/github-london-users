@@ -30,13 +30,11 @@ cd github-london-users
 pip install requests
 ```
 
-Set your token as an environment variable rather than hardcoding it:
+Set your token as an environment variable:
 
 ```bash
 export GITHUB_TOKEN="your-personal-access-token"
 ```
-
-*(If you're editing `scraping_code.py`, swap the hardcoded `Authorization` header for `os.getenv("GITHUB_TOKEN")` — the current script expects the token pasted directly into the `headers` dict.)*
 
 ## Usage
 
