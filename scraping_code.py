@@ -5,12 +5,13 @@ if response.status_code == 200:
 else:
     print("Token not working. Status code:", response.status_code, response.json())
 import requests
+import os
 import csv
 import time
 from collections import defaultdict
 
 headers = {
-    "Authorization": "Bearer ",  #I added my PAT here
+    "Authorization": f"Bearer {os.getenv('GITHUB_TOKEN')}",
     "Accept": "application/vnd.github+json"
 }
 
