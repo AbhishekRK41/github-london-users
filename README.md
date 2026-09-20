@@ -43,8 +43,10 @@ python scraping_code.py
 ```
 
 Produces two files in the working directory:
-- **`users.csv`** — GitHub login, name, company, location, email, bio, hireable status, follower count
+- **`users.csv`** — GitHub login, name, company, location, bio, hireable status, follower count
 - **`repositories.csv`** — repo name, owner, creation date, star count, primary language, license
+
+Email addresses are deliberately not collected.
 
 ## Findings
 
