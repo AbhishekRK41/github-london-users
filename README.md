@@ -46,7 +46,7 @@ Produces two files in the working directory:
 - **`users.csv`** — GitHub login, name, company, location, bio, hireable status, follower count
 - **`repositories.csv`** — repo name, owner, creation date, star count, primary language, license
 
-Email addresses are deliberately not collected.
+The script deliberately does not collect email addresses. The `users.csv` currently committed here was produced before that change and still has an `email` column; re-run the script to regenerate it without one.
 
 ## Findings
 
