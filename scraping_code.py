@@ -76,12 +76,12 @@ for user in get_users():
     user_details = get_user_details(username)
     company = (user_details.get('company') or '').strip().lstrip('@').upper()
     
+    # Email addresses are deliberately not collected (personal data)
     user_data = {
         'login': username,
         'name': user_details.get('name', ''),
         'company': company,
         'location': user_details.get('location', ''),
-        'email': user_details.get('email', ''),
         'hireable': str(user_details.get('hireable', '')).lower(),
         'bio': user_details.get('bio', ''),
         'public_repos': user_details.get('public_repos', 0),
@@ -109,7 +109,7 @@ for user in get_users():
 
 # Write users data to users.csv
 with open("users.csv", "w", newline="", encoding="utf-8") as csvfile:
-    fieldnames = ['login', 'name', 'company', 'location', 'email', 'hireable', 'bio', 'public_repos', 'followers', 'following', 'created_at']
+    fieldnames = ['login', 'name', 'company', 'location', 'hireable', 'bio', 'public_repos', 'followers', 'following', 'created_at']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(users)
